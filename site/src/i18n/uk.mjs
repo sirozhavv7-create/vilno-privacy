@@ -9,6 +9,7 @@ export const t = {
     vil: 'Віль',
     pricing: 'Ціни',
     faq: 'FAQ',
+    blog: 'Блог',
     download: 'Завантажити',
   },
   store: {
@@ -22,6 +23,7 @@ export const t = {
     privacy: 'Конфіденційність',
     terms: 'Умови використання',
     faq: 'FAQ',
+    blog: 'Блог',
     rights: '© Вільно 2026',
   },
 };

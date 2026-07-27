@@ -37,7 +37,7 @@ site/
 │   ├── i18n/uk.mjs        спільні UI-рядки (для майбутніх локалей)
 │   ├── layouts/Base.astro SEO, OG, canonical, JSON-LD, фавікони
 │   ├── components/        Header, Footer, Logo, StoreButtons, Screen
-│   ├── content/blog/      markdown-статті блогу (поки порожньо)
+│   ├── content/blog/      markdown-статті блогу
 │   └── pages/             / /get /faq /privacy /terms /blog 404
 ├── scripts/generate-assets.mjs   генерація og/фавіконів/QR
 └── public/                статичні файли (robots.txt, іконки, og.png, QR)
