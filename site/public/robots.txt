@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vilno-app.web.app/sitemap-index.xml
+Sitemap: https://vilno-ua.web.app/sitemap-index.xml

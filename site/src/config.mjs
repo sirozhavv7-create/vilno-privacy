@@ -3,9 +3,9 @@
  * Усі плейсхолдери, які треба заповнити руками, — тут.
  */
 
-/** Посилання на Google Play (додати справжній id застосунку). */
+/** Посилання на Google Play. */
 export const PLAY_URL =
-  'https://play.google.com/store/apps/details?id=app.vilno'; // TODO: справжній package id
+  'https://play.google.com/store/apps/details?id=PACKAGE_TUT'; // ← заміни PACKAGE_TUT на package з app.json
 
 /** Посилання на App Store. Заповнити, коли застосунок вийде на iOS. */
 export const APPSTORE_URL = ''; // TODO: https://apps.apple.com/app/id...
@@ -13,11 +13,11 @@ export const APPSTORE_URL = ''; // TODO: https://apps.apple.com/app/id...
 /** Перемикач стану iOS: true → кнопка App Store активна, /get веде в App Store. */
 export const IOS_LIVE = false;
 
-/** Пошта підтримки (взято з політики конфіденційності в репо). */
-export const SUPPORT_EMAIL = 'Sirozhav17@gmail.com';
+/** Пошта підтримки (офіційна). */
+export const SUPPORT_EMAIL = 'Sirozhavv7@gmail.com';
 
-/** Канонічна адреса сайту. Поки — Firebase Hosting цього проєкту. */
-export const SITE_URL = 'https://vilno-app.web.app'; // TODO: замінити на https://<project>.web.app свого Firebase-проєкту
+/** Канонічна адреса сайту. */
+export const SITE_URL = 'https://vilno-ua.web.app';
 
 /**
  * Скріншоти застосунку. Поки null — на сторінках акуратні порожні рамки.

@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "vilno-ua",
     "public": "site/dist",
     "cleanUrls": true,
     "trailingSlash": false,
