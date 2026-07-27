@@ -1,0 +1,21 @@
+{
+  "name": "vilno-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Маркетинговий сайт застосунку «Вільно»",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "generate:assets": "node scripts/generate-assets.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.4.1",
+    "astro": "^5.12.0"
+  },
+  "devDependencies": {
+    "qrcode": "^1.5.4",
+    "sharp": "^0.34.2"
+  }
+}

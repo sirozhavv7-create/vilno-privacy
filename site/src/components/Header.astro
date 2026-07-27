@@ -1,0 +1,18 @@
+---
+import Logo from './Logo.astro';
+import { t } from '../i18n/uk.mjs';
+import { APP_NAME } from '../config.mjs';
+---
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo" aria-label={APP_NAME}>
+      <Logo size={32} />
+      <span>{APP_NAME}</span>
+    </a>
+    <nav class="site-nav" aria-label="Основна навігація">
+      <a href="/faq">{t.nav.faq}</a>
+      <a href="/get" class="nav-cta">{t.nav.download}</a>
+    </nav>
+  </div>
+</header>

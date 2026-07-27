@@ -1,0 +1,14 @@
+{
+  "name": "Вільно",
+  "short_name": "Вільно",
+  "description": "Український застосунок, який допомагає кинути курити й парити.",
+  "lang": "uk",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#fbf8f1",
+  "theme_color": "#586b4d",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

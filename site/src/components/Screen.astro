@@ -1,0 +1,16 @@
+---
+import { SCREENS } from '../config.mjs';
+
+interface Props {
+  /** Ключ скріншота з конфігу: SCREEN_1..SCREEN_5 */
+  id: keyof typeof SCREENS;
+  alt: string;
+}
+
+const { id, alt } = Astro.props;
+const src = SCREENS[id];
+---
+
+<div class="screen">
+  {src ? <img src={src} alt={alt} loading="lazy" width="280" height="590" /> : <span>{id}</span>}
+</div>

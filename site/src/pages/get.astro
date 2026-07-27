@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import StoreButtons from '../components/StoreButtons.astro';
+import { PLAY_URL, APPSTORE_URL, IOS_LIVE } from '../config.mjs';
+
+const title = 'Завантажити Вільно';
+const description = 'Завантаж застосунок Вільно для Android або iOS.';
+---
+
+<Base title={title} description={description} path="/get" noindex={true}>
+  <section class="get-page">
+    <div class="container">
+      <h1>Завантажити Вільно</h1>
+      <p class="section-lead">
+        Наведи камеру телефона на QR-код — або обери свій стор.
+      </p>
+      <div class="qr-box">
+        <img src="/qr-get.svg" alt="QR-код для завантаження Вільно" width="220" height="220" loading="eager" />
+      </div>
+      <div style="display:flex;justify-content:center;">
+        <StoreButtons />
+      </div>
+    </div>
+  </section>
+
+  <script define:vars={{ PLAY_URL, APPSTORE_URL, IOS_LIVE }}>
+    // Розумний редірект: Android -> Google Play (з utm -> referrer),
+    // iOS -> App Store (або лендінг, поки IOS_LIVE=false), десктоп -> ця сторінка з QR.
+    const ua = navigator.userAgent;
+    const params = new URLSearchParams(location.search);
+
+    // Збираємо utm_* і прокидаємо їх у Play через referrer= (url-encoded),
+    // щоб джерела трафіку було видно в Play Console.
+    const utm = [...params.entries()].filter(([k]) => k.startsWith('utm_'));
+    let playUrl = PLAY_URL;
+    if (utm.length) {
+      const referrer = encodeURIComponent(
+        utm.map(([k, v]) => `${k}=${v}`).join('&')
+      );
+      playUrl += (playUrl.includes('?') ? '&' : '?') + 'referrer=' + referrer;
+    }
+
+    if (/android/i.test(ua)) {
+      location.replace(playUrl);
+    } else if (/iphone|ipad|ipod/i.test(ua)) {
+      location.replace(IOS_LIVE && APPSTORE_URL ? APPSTORE_URL : '/?ios=1');
+    }
+    // Десктоп: залишаємось на сторінці з QR-кодом і кнопками.
+  </script>
+</Base>

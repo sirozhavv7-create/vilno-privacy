@@ -1,0 +1,239 @@
+---
+import Base from '../layouts/Base.astro';
+import StoreButtons from '../components/StoreButtons.astro';
+import Screen from '../components/Screen.astro';
+import { faq, landingFaqIds } from '../data/faq.mjs';
+import { SITE_URL, SUPPORT_EMAIL, APP_NAME, PLAY_URL } from '../config.mjs';
+
+const title = 'Вільно — додаток, щоб кинути курити й парити';
+const description =
+  'Український застосунок, який допомагає кинути курити: рахує вільні дні та збережені гроші, тримає в момент тяги і не обнуляє прогрес після зриву. Підходить для сигарет, вейпа й систем нагрівання.';
+
+const miniFaq = landingFaqIds.map((id) => faq.find((item) => item.id === id));
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: APP_NAME,
+    url: SITE_URL,
+    logo: new URL('/icon-512.png', SITE_URL).href,
+    email: SUPPORT_EMAIL,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: APP_NAME,
+    description,
+    applicationCategory: 'HealthApplication',
+    operatingSystem: 'Android',
+    installUrl: PLAY_URL,
+    inLanguage: 'uk',
+    offers: [
+      {
+        '@type': 'Offer',
+        name: 'Безкоштовно',
+        price: '0',
+        priceCurrency: 'UAH',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Pro (місяць)',
+        price: '149',
+        priceCurrency: 'UAH',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Pro (рік)',
+        price: '999',
+        priceCurrency: 'UAH',
+      },
+    ],
+  },
+];
+---
+
+<Base title={title} description={description} path="/" jsonLd={jsonLd}>
+  <!-- 1. Hero -->
+  <section class="hero">
+    <div class="container">
+      <div>
+        <p class="ios-banner" id="ios-banner">
+          Вже в Google Play. В App Store — незабаром.
+        </p>
+        <h1>Кинь курити. Вільно.</h1>
+        <p class="hero-sub">
+          Український застосунок, який допомагає кинути курити й парити: рахує
+          вільні дні та збережені гроші, тримає в момент тяги і не обнуляє
+          прогрес після зриву.
+        </p>
+        <StoreButtons />
+      </div>
+      <Screen id="SCREEN_1" alt="Головний екран Вільно з лічильником вільних днів" />
+    </div>
+  </section>
+
+  <!-- 2. Як це працює -->
+  <section id="how">
+    <div class="container">
+      <h2 class="section-title">Як це працює</h2>
+      <p class="section-lead">
+        Три речі, які тримають тебе на волі щодня.
+      </p>
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
+          </div>
+          <h3>Лічильник</h3>
+          <p>
+            Дні на волі, збережені гроші та етапи відновлення тіла — твій
+            прогрес завжди перед очима.
+          </p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21C7 17 3.5 13.5 3.5 9.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 8.5 2.5c0 4-3.5 7.5-8.5 11.5z"></path></svg>
+          </div>
+          <h3>SOS у момент тяги</h3>
+          <p>
+            Накрило? Протримайся кілька хвилин — разом. Дихання, відволікання
+            і підтримка, поки хвиля не спаде.
+          </p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"></path><path d="M6 20V10"></path><path d="M12 20V4"></path><path d="M18 20v-7"></path></svg>
+          </div>
+          <h3>Щоденник і тригери</h3>
+          <p>
+            Записуй моменти тяги і зрозумій, коли і чому тягне — щоб наступного
+            разу бути готовим.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Блок Віля -->
+  <section id="vil">
+    <div class="container">
+      <div class="feature-block">
+        <div>
+          <h2>Віль — супутник, а не суддя</h2>
+          <p>
+            Віль — AI-компаньйон усередині застосунку. Він памʼятає твій шлях:
+            скільки днів ти вільний, що тебе тригерить, як ти пережив минулу
+            тягу. З ним можна поговорити о третій ночі, коли накрило. Він
+            підтримає після зриву без жодного докору. І так — його можна
+            назвати по-своєму.
+          </p>
+        </div>
+        <Screen id="SCREEN_2" alt="Чат із Вілем — AI-компаньйоном у застосунку Вільно" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Зрив ≠ кінець -->
+  <section id="relapse">
+    <div class="container">
+      <div class="feature-block dark">
+        <div>
+          <h2>Зрив ≠ кінець</h2>
+          <p>
+            У більшості застосунків зрив обнуляє все — і людина, згораючи від
+            сорому, видаляє застосунок. У Вільно прогрес не згорає: загальний
+            чистий час зберігається. Зрив — це день, а не вирок.
+          </p>
+        </div>
+        <div>
+          <h3>Що це означає на практиці</h3>
+          <p>
+            Твої вільні дні, збережені гроші й подолані тяги залишаються з
+            тобою. Після зриву застосунок допоможе зрозуміти, що сталося, — і
+            рушити далі.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Чесно під твій продукт -->
+  <section id="products">
+    <div class="container">
+      <div class="feature-block">
+        <Screen id="SCREEN_3" alt="Вибір продукту у Вільно: сигарети, вейп, системи нагрівання" />
+        <div>
+          <h2>Чесно під твій продукт</h2>
+          <p>
+            Сигарети, вейп чи системи нагрівання — це різні звички, і тіло
+            відновлюється після них по-різному. Вільно використовує різні шкали
+            відновлення для кожного продукту й не дає вигаданих обіцянок:
+            тільки те, що справді відомо.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Ціни -->
+  <section id="pricing">
+    <div class="container">
+      <h2 class="section-title">Ціни</h2>
+      <p class="section-lead">Головне — безкоштовно. Pro — для тих, хто хоче більше.</p>
+      <div class="pricing">
+        <article class="price-card">
+          <span class="pill">Безкоштовно</span>
+          <div class="price-tag">0 ₴</div>
+          <p class="price-alt">назавжди</p>
+          <ul>
+            <li>Лічильник днів і грошей</li>
+            <li>SOS у момент тяги</li>
+            <li>Щоденник і тригери</li>
+            <li>Спільнота підтримки</li>
+            <li>Віль (обмежена кількість повідомлень)</li>
+          </ul>
+        </article>
+        <article class="price-card pro">
+          <span class="pill">Pro</span>
+          <div class="price-tag">149 ₴<span class="per">/міс</span></div>
+          <p class="price-alt">або 999 ₴/рік · перші 7 днів безкоштовно</p>
+          <ul>
+            <li>Віль без лімітів</li>
+            <li>Системи відновлення тіла</li>
+            <li>Розширена аналітика</li>
+            <li>Усе з безкоштовного плану</li>
+          </ul>
+        </article>
+      </div>
+      <p class="price-fine">
+        Оплата через Google Play / App Store. Скасувати можна будь-коли.
+      </p>
+    </div>
+  </section>
+
+  <!-- 7. Міні-FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">Часті питання</h2>
+      <div class="faq-list">
+        {miniFaq.map((item) => (
+          <details class="faq-item">
+            <summary>{item.q}</summary>
+            <div class="answer"><p>{item.a}</p></div>
+          </details>
+        ))}
+      </div>
+      <p class="faq-more">
+        <a href="/faq" class="btn ghost">Усі питання й відповіді</a>
+      </p>
+    </div>
+  </section>
+
+  <script>
+    // Показ банера «iOS скоро», коли /get привів iOS-користувача (?ios=1)
+    if (new URLSearchParams(location.search).has('ios')) {
+      document.getElementById('ios-banner')?.classList.add('show');
+    }
+  </script>
+</Base>

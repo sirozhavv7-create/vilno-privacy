@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vilno-app.web.app/sitemap-index.xml

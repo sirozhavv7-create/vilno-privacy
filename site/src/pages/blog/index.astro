@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const title = 'Блог — Вільно';
+const description =
+  'Статті про те, як кинути курити й парити: тяга, зриви, відновлення тіла та підтримка.';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<Base title={title} description={description} path="/blog">
+  <section>
+    <div class="container">
+      <h1 class="section-title">Блог</h1>
+      {posts.length === 0 ? (
+        <p class="empty-state">Скоро тут зʼявляться перші статті.</p>
+      ) : (
+        <div class="blog-list">
+          {posts.map((post) => (
+            <article class="blog-card">
+              <a href={`/blog/${post.id}`}>
+                <time datetime={post.data.pubDate.toISOString()}>
+                  {post.data.pubDate.toLocaleDateString('uk-UA', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </time>
+                <h2>{post.data.title}</h2>
+                <p>{post.data.description}</p>
+              </a>
+            </article>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</Base>

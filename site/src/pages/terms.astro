@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import { SUPPORT_EMAIL } from '../config.mjs';
+
+const title = 'Умови використання — Вільно';
+const description = 'Умови використання застосунку Вільно.';
+---
+
+<Base title={title} description={description} path="/terms">
+  <div class="prose">
+    <h1>Умови використання</h1>
+    <p class="updated">Застосунок «Вільно»</p>
+
+    <div class="placeholder-block">
+      <p><strong>[ВСТАВИТИ ТЕКСТ]</strong></p>
+      <p>
+        Тексту умов використання ще немає в репозиторії. Коли він буде готовий —
+        додай його сюди (site/src/pages/terms.astro) замість цього блока.
+      </p>
+    </div>
+
+    <p>
+      З питань щодо умов використання:
+      <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
+    </p>
+  </div>
+</Base>
