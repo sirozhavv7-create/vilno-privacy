@@ -1,16 +1,54 @@
 ---
+import { join } from 'node:path';
+import sharp from 'sharp';
 import { SCREENS } from '../config.mjs';
 
 interface Props {
   /** Ключ скріншота з конфігу: SCREEN_1..SCREEN_5 */
   id: keyof typeof SCREENS;
   alt: string;
+  /** 'eager' для скріна в hero, 'lazy' для решти */
+  loading?: 'eager' | 'lazy';
 }
 
-const { id, alt } = Astro.props;
+const { id, alt, loading = 'lazy' } = Astro.props;
 const src = SCREENS[id];
+
+// Реальні розміри файлу беремо на збірці — щоб у розмітці були точні
+// width/height і сторінка не стрибала під час завантаження.
+let size = null;
+if (src) {
+  try {
+    const { width, height } = await sharp(
+      join(process.cwd(), 'public', src.replace(/^\//, ''))
+    ).metadata();
+    size = { width, height };
+  } catch {
+    // Файлу немає — покажемо порожню рамку замість того, щоб ламати збірку.
+    console.warn(`[Screen] не знайдено ${src} — показую плейсхолдер`);
+  }
+}
+
+const webp = src?.replace(/\.png$/, '.webp');
 ---
 
-<div class="screen">
-  {src ? <img src={src} alt={alt} loading="lazy" width="280" height="590" /> : <span>{id}</span>}
-</div>
+{
+  size ? (
+    <picture class="screen filled">
+      <source srcset={webp} type="image/webp" />
+      <img
+        src={src}
+        alt={alt}
+        width={size.width}
+        height={size.height}
+        loading={loading}
+        decoding={loading === 'eager' ? 'sync' : 'async'}
+        fetchpriority={loading === 'eager' ? 'high' : 'auto'}
+      />
+    </picture>
+  ) : (
+    <div class="screen">
+      <span>{id}</span>
+    </div>
+  )
+}

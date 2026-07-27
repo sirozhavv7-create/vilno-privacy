@@ -80,9 +80,10 @@ site/
      `npm run generate:assets`, щоб QR і robots.txt* вказували куди треба);
    - `APPSTORE_URL` + `IOS_LIVE = true` — коли вийде iOS;
    - `SUPPORT_EMAIL` — зараз пошта з політики конфіденційності, за потреби замінити.
-2. **Скріншоти:** покласти файли в `public/screens/` і вписати шляхи в
-   `SCREENS` у `config.mjs` (SCREEN_1 — головний екран, SCREEN_2 — чат з Вілем,
-   SCREEN_3 — вибір продукту).
+2. **Скріншоти:** SCREEN_1–3 уже підставлені (`public/screens/`). Щоб додати
+   нові або замінити наявні: поклади PNG у `public/screens/`, впиши шлях у
+   `SCREENS` у `config.mjs` і виконай `npm run generate:assets` — скрипт стисне
+   файл під веб (ширина 560 px) і зробить `.webp`-версію поруч.
 3. **`public/robots.txt`** — адреса sitemap у ньому статична, оновити разом із `SITE_URL`.
 4. **Текст умов використання** — замінити блок `[ВСТАВИТИ ТЕКСТ]` у
    `src/pages/terms.astro`.

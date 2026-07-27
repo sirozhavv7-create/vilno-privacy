@@ -25,9 +25,9 @@ export const SITE_URL = 'https://vilno-ua.web.app';
  * і вкажи шлях, напр. '/screens/screen-1.webp'.
  */
 export const SCREENS = {
-  SCREEN_1: null, // Hero: головний екран з лічильником
-  SCREEN_2: null, // Чат з Вілем
-  SCREEN_3: null, // Вибір продукту / шкали відновлення
+  SCREEN_1: '/screens/screen-1.png', // Hero: головний екран з лічильником
+  SCREEN_2: '/screens/screen-2.png', // Чат з Вілем
+  SCREEN_3: '/screens/screen-3.png', // Вибір продукту / шкали відновлення
   SCREEN_4: null, // резерв
   SCREEN_5: null, // резерв
 };

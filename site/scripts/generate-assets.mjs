@@ -3,6 +3,7 @@
  *  - og.png (1200×630) — фон у кольорах бренду + іконка застосунку + слоган;
  *  - набір фавіконів (favicon-32.png, apple-touch-icon.png, icon-192/512.png)
  *    зі справжньої іконки застосунку public/icon.png;
+ *  - стиснені скріншоти з public/screens/ (.webp + оптимізований .png);
  *  - qr-get.svg — статичний QR, що веде на SITE_URL/get.
  *
  * Запуск: npm run generate:assets (з каталогу site/).
@@ -13,7 +14,7 @@ import { dirname, join } from 'node:path';
 import { readFile, writeFile } from 'node:fs/promises';
 import sharp from 'sharp';
 import QRCode from 'qrcode';
-import { SITE_URL, APP_NAME, TAGLINE } from '../src/config.mjs';
+import { SITE_URL, APP_NAME, TAGLINE, SCREENS } from '../src/config.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const pub = (f) => join(root, 'public', f);
@@ -24,6 +25,7 @@ const SOURCE_ICON = pub('icon.png');
 // ---- Фавікони з icon.png ----
 const sizes = [
   ['favicon-32.png', 32],
+  ['logo-64.png', 64], // логотип у шапці (32 CSS px, 2× для retina)
   ['apple-touch-icon.png', 180],
   ['icon-192.png', 192],
   ['icon-512.png', 512],
@@ -68,6 +70,25 @@ await sharp(Buffer.from(ogBackground))
   .png()
   .toFile(pub('og.png'));
 console.log('✓ og.png');
+
+// ---- Скріншоти застосунку ----
+// Джерело — файли public/screens/screen-N.png (як їх поклали в репо).
+// Кожен стискається під веб: .webp для сучасних браузерів і оптимізований
+// .png як фолбек. Ширина 600 px покриває 2× для слота 280 px на сторінці.
+const SCREEN_WIDTH = 560; // 2× слота 280 px
+for (const path of Object.values(SCREENS)) {
+  if (!path) continue;
+  const file = pub(path.replace(/^\//, ''));
+  const source = await readFile(file);
+  const base = sharp(source).resize({ width: SCREEN_WIDTH, withoutEnlargement: true });
+
+  await base.clone().webp({ quality: 80 }).toFile(file.replace(/\.png$/, '.webp'));
+  // PNG перезаписуємо на місці: далі скрипт бере його ж як джерело,
+  // тож повторні прогони не погіршують якість (PNG — без втрат).
+  const png = await base.clone().png({ compressionLevel: 9, palette: true }).toBuffer();
+  await writeFile(file, png);
+  console.log(`✓ ${path} (+ .webp)`);
+}
 
 // ---- QR-код на /get ----
 const qrSvg = await QRCode.toString(`${SITE_URL}/get`, {
