@@ -19,7 +19,8 @@ const { Content } = await render(post);
   description={post.data.description}
   path={`/blog/${post.id}`}
 >
-  <article class="prose">
+  <article class="prose article">
+    <a href="/blog" class="back-link">← Блог</a>
     <h1>{post.data.title}</h1>
     <p class="updated">
       <time datetime={post.data.pubDate.toISOString()}>
@@ -31,5 +32,13 @@ const { Content } = await render(post);
       </time>
     </p>
     <Content />
+    <aside class="article-cta">
+      <h2>Спробуй Вільно</h2>
+      <p>
+        Лічильник вільних днів, SOS у момент тяги і Віль — AI-супутник, який
+        завжди поруч. Безкоштовно.
+      </p>
+      <a href="/get" class="btn">Завантажити Вільно</a>
+    </aside>
   </article>
 </Base>
