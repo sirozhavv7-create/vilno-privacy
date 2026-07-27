@@ -264,22 +264,22 @@ section {
   background: #efece4;
   color: var(--muted);
   pointer-events: none;
-  position: relative;
 }
 
 .store-btn.disabled svg {
   opacity: 0.5;
 }
 
+/* Бейдж живе всередині кнопки, у потоці — не вилазить за її межі */
 .badge-soon {
-  position: absolute;
-  top: -8px;
-  right: -8px;
+  align-self: flex-start;
   background: var(--sage);
   color: #fff;
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 700;
-  padding: 3px 10px;
+  line-height: 1.5;
+  padding: 0 8px;
+  margin-bottom: 3px;
   border-radius: var(--radius-pill);
 }
 
@@ -352,7 +352,8 @@ section {
 
 /* ===== Скріншот застосунку (і плейсхолдер, поки файлу немає) ===== */
 .screen {
-  width: min(280px, 78vw);
+  /* Мобайл: мокап ≈57% ширини контейнера — ілюструє текст, а не витісняє його */
+  width: min(52vw, 280px);
   aspect-ratio: 9 / 19;
   margin: 0 auto;
   border-radius: 36px;
@@ -363,6 +364,12 @@ section {
   color: var(--muted);
   font-size: 0.85rem;
   overflow: hidden;
+}
+
+@media (min-width: 860px) {
+  .screen {
+    width: 280px;
+  }
 }
 
 /* Реальний скрін: пропорції задає саме зображення, рамку не малюємо */
