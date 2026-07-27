@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { faq } from '../data/faq.mjs';
+import { SITE_URL } from '../config.mjs';
 
 const title = 'Що таке Вільно — питання й відповіді | FAQ';
 const description =
@@ -14,7 +15,8 @@ const jsonLd = {
     name: item.q,
     acceptedAnswer: {
       '@type': 'Answer',
-      text: item.a,
+      // у розмітці посилання відносні, у JSON-LD їх треба зробити абсолютними
+      text: item.a.replaceAll('href="/', `href="${SITE_URL}/`),
     },
   })),
 };
@@ -32,7 +34,7 @@ const jsonLd = {
         {faq.map((item) => (
           <details class="faq-item" id={item.id}>
             <summary>{item.q}</summary>
-            <div class="answer"><p>{item.a}</p></div>
+            <div class="answer"><p set:html={item.a} /></div>
           </details>
         ))}
       </div>

@@ -17,7 +17,7 @@
   h1 { font-size: 1.6rem; margin-bottom: 4px; }
   h2 { font-size: 1.2rem; margin-top: 32px; color: #586b4d; }
   h3 { font-size: 1.02rem; margin-top: 20px; }
-  .updated { color: #7a736a; font-size: 0.9rem; margin-bottom: 24px; }
+  .updated { color: #6d675e; font-size: 0.9rem; margin-bottom: 24px; }
   .lang-switch { margin: 16px 0 32px; }
   .lang-switch a {
     display: inline-block; padding: 6px 14px; margin-right: 8px;
@@ -29,6 +29,11 @@
   ul { padding-left: 20px; }
   li { margin-bottom: 6px; }
   .section { margin-bottom: 8px; }
+  .table-wrap { overflow-x: auto; margin: 20px 0 24px; }
+  table { border-collapse: collapse; width: 100%; min-width: 460px; font-size: 0.95rem; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 14px; border-bottom: 1px solid #e0d9cc; }
+  th { background: #e7ecdf; color: #586b4d; font-weight: 700; }
+  tbody tr:last-child td { border-bottom: none; }
 </style>
 </head>
 <body>
@@ -41,43 +46,62 @@
 <!-- ============ УКРАЇНСЬКА ============ -->
 <section id="uk">
 <h1>Політика конфіденційності</h1>
-<p class="updated">Застосунок «Вільно» · Востаннє оновлено: 8 липня 2026 </p>
+<p class="updated">Застосунок «Вільно» · Востаннє оновлено: 27 липня 2026</p>
 
 <p>Ця Політика конфіденційності описує, як застосунок «Вільно» («ми», «застосунок») обробляє інформацію користувачів. Ми поважаємо вашу приватність і збираємо мінімум даних, необхідних для роботи застосунку.</p>
 
 <h2>1. Хто ми</h2>
-<p>«Вільно» — мобільний застосунок, що допомагає відмовитися від куріння: відстеження прогресу, поради, спільнота підтримки. Розробник: Serhii Veresiuk. Контакт для питань щодо конфіденційності: <a href="mailto:Sirozhav17@gmail.com">Sirozhav17@gmail.com</a>.</p>
+<p>«Вільно» — мобільний застосунок, що допомагає відмовитися від куріння: відстеження прогресу, поради, спільнота підтримки. Розробник: Serhii Veresiuk. Контакт для питань щодо конфіденційності: <a href="mailto:Sirozhavv7@gmail.com">Sirozhavv7@gmail.com</a>.</p>
 
-<h2>2. Які дані ми обробляємо</h2>
-
-<h3>2.1. Дані, що зберігаються лише на вашому пристрої</h3>
-<p>Більшість даних ніколи не залишає ваш телефон. Локально зберігаються:</p>
+<h2>2. Віль: як обробляються твої повідомлення</h2>
+<p>Віль — AI-компаньйон усередині застосунку. Щоб він міг відповісти осмислено, твоє повідомлення разом із коротким контекстом надсилається на наш захищений сервер, а звідти — компанії Anthropic PBC (США), чия мовна модель формує відповідь.</p>
+<p><strong>Що йде разом із повідомленням:</strong></p>
 <ul>
-  <li>дата відмови від куріння, налаштування продукту та ціни;</li>
-  <li>ваш прогрес, статистика, подолані тяги, збережені кошти;</li>
-  <li>записи про моменти тяги (для персональних порад);</li>
-  <li>ваші цілі, налаштування, мова інтерфейсу;</li>
-  <li>налаштування нагадувань (сповіщень).</li>
+  <li>тип продукту, який ти кидаєш, і твоя мотивація;</li>
+  <li>скільки днів ти вільний, статистика тяг за останні тижні;</li>
+  <li>поточний етап відновлення організму;</li>
+  <li>твої цілі та суми накопичених заощаджень;</li>
+  <li>настрої останніх чек-інів і <strong>короткі уривки твоїх нотаток</strong> із чек-інів та щоденника (до 80 символів кожен);</li>
+  <li>короткі підсумки попередніх розмов, щоб Віль не питав те саме двічі.</li>
 </ul>
-<p>Ці дані ми не передаємо на сервери й не маємо до них доступу.</p>
+<p>Цей контекст потрібен лише для того, щоб відповідь була про тебе, а не загальною. <strong>Ми не зберігаємо ні твоє повідомлення, ні контекст на наших серверах</strong> — вони проходять транзитом і використовуються тільки для формування відповіді.</p>
+<p>Anthropic обробляє ці дані як наш підрядник і <strong>не використовує їх для навчання своїх моделей</strong> — це передбачено комерційними умовами, за якими ми користуємося сервісом. На боці Anthropic запит може короткочасно зберігатися для контролю зловживань.</p>
+<p><strong>Історія розмови з Вілем зберігається лише на твоєму пристрої.</strong> Ми не маємо до неї доступу і не можемо її прочитати. Якщо ти видалиш історію в застосунку або видалиш сам застосунок — вона зникне назавжди, і в нас її копії немає.</p>
+<p><strong>Виняток — скарги.</strong> Якщо ти натискаєш «поскаржитися» на повідомлення Віля, саме це повідомлення разом із попередньою реплікою зберігається на нашому сервері, щоб ми могли розібратися й покращити відповіді. Такі записи ми зберігаємо не довше 90 днів.</p>
 
-<h3>2.2. Дані функції «Спільнота»</h3>
-<p>Якщо ви користуєтеся спільнотою (чат, стрічка успіхів, напарник), відповідні дані обробляються через сервіс <strong>Google Firebase</strong> (Firestore, Firebase Authentication). До них належать:</p>
-<ul>
-  <li>обраний вами нікнейм (псевдонім);</li>
-  <li>повідомлення, які ви надсилаєте в чат або напарнику;</li>
-  <li>дописи, які ви публікуєте у стрічці успіхів;</li>
-  <li>анонімний ідентифікатор облікового запису.</li>
-</ul>
-<p>Вхід у спільноту <strong>анонімний</strong>: ми не запитуємо ваше імʼя, електронну пошту чи номер телефону. Обліковий запис створюється автоматично й анонімно.</p>
+<h2>3. Щоденник, чек-іни і прогрес</h2>
+<p>Твій щоденник, записи про тягу, чек-іни, дата відмови та статистика зберігаються <strong>на твоєму пристрої</strong>. Вони не потрапляють на наші сервери й не синхронізуються між пристроями.</p>
+<p>Виняток описано вище: короткі уривки нотаток можуть увійти в контекст повідомлення Вілю — тільки в момент, коли ти сам до нього звертаєшся.</p>
 
-<h2>3. Правова підстава та мета обробки</h2>
+<h2>4. Спільнота</h2>
+<p>Якщо ти користуєшся спільнотою, на наших серверах (Google Firebase) зберігаються: обраний тобою нік, твої дописи в стрічці, повідомлення в чаті та листування з напарником, а також дата відмови й параметри підрахунку, які видно в публічному профілі. Реєстрація анонімна: ми не запитуємо пошту, номер телефону чи справжнє ім'я.</p>
+<p>Ці дані можна повністю видалити в налаштуваннях застосунку.</p>
+
+<h2>5. Підписка «Вільно Pro»</h2>
+<p>Оплату приймає магазин застосунків (Google Play або App Store). <strong>Дані твоєї банківської картки ми не отримуємо і не зберігаємо.</strong></p>
+<p>Для керування підписками ми використовуємо сервіс RevenueCat, Inc. (США). Йому передається технічний ідентифікатор твого акаунта в застосунку, інформація про покупку (який план, коли оформлено, чи активна підписка) і базові технічні дані пристрою. RevenueCat не отримує ні твоїх розмов із Вілем, ні щоденника, ні даних спільноти.</p>
+
+<h2>6. Правова підстава та мета обробки</h2>
 <p>Ми обробляємо дані спільноти лише для того, щоб функція спілкування працювала. Локальні дані використовуються лише для роботи застосунку на вашому пристрої.</p>
 
-<h2>4. Передавання третім сторонам</h2>
-<p>Ми не продаємо й не передаємо ваші дані третім сторонам для реклами. Дані спільноти обробляються постачальником інфраструктури Google Firebase відповідно до <a href="https://firebase.google.com/support/privacy" target="_blank">політики конфіденційності Google</a>. У першому релізі застосунок не містить реклами та сторонньої аналітики.</p>
+<h2>7. Кому ми передаємо дані</h2>
+<p>Ми не продаємо твої дані й не передаємо їх для реклами. Ми не використовуємо рекламні мережі та трекери. Доступ до даних мають лише сервіси, без яких застосунок не працює:</p>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Сервіс</th><th>Що отримує</th><th>Навіщо</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Google Firebase (Google LLC)</td><td>дані спільноти, технічний ідентифікатор</td><td>зберігання й робота серверної частини</td></tr>
+    <tr><td>Anthropic PBC (США)</td><td>текст повідомлення й контекст (транзитом)</td><td>формування відповіді Віля</td></tr>
+    <tr><td>RevenueCat, Inc.</td><td>ідентифікатор акаунта, дані про підписку</td><td>керування підпискою</td></tr>
+    <tr><td>Google Play / App Store</td><td>дані про покупку</td><td>приймання оплати</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Частина цих сервісів розташована за межами України, зокрема у США. Передача відбувається лише в обсязі, потрібному для роботи застосунку.</p>
 
-<h2>5. Зберігання й видалення даних</h2>
+<h2>8. Зберігання й видалення даних</h2>
 <p>Локальні дані зберігаються, доки ви не видалите застосунок або не скинете їх у налаштуваннях.</p>
 <p>Дані спільноти зберігаються, доки ви не видалите свій обліковий запис. У застосунку є функція <strong>«Видалити акаунт і дані спільноти»</strong> (в налаштуваннях), яка видаляє ваш анонімний обліковий запис і повʼязані з ним дані (нікнейм, повідомлення, дописи) із серверів.</p>
 <p>Скарги на контент можуть зберігатися окремо для цілей безпеки та модерації.</p>
@@ -86,20 +110,20 @@
 <p>Ви можете будь-коли видалити свій акаунт і всі пов'язані дані прямо в застосунку «Вільно»: відкрийте <strong>«Ще» → «Видалити акаунт і дані спільноти»</strong>. Після цього буде видалено: ваш нік, повідомлення в чаті та стрічці, дописи, реакції, профіль спільноти. Локальні дані (прогрес, налаштування) видаляються при видаленні застосунку або через «Почати спочатку».</p>
 <p>Дані видаляються без додаткового періоду зберігання (крім записів скарг, які зберігаються для безпеки згідно з вимогами).</p>
 
-<h2>6. Модерація та контент користувачів</h2>
+<h2>9. Модерація та контент користувачів</h2>
 <p>Спільнота містить контент, створений користувачами. Ми застосовуємо автоматичну модерацію, надаємо змогу поскаржитися на контент та заблокувати користувача. Образливий або неприйнятний контент заборонено правилами спільноти, які ви приймаєте перед першим входом.</p>
 
-<h2>7. Діти</h2>
+<h2>10. Діти</h2>
 <p>Застосунок призначений для повнолітніх осіб (18+), оскільки стосується теми відмови від тютюну. Ми свідомо не збираємо дані дітей.</p>
 
-<h2>8. Ваші права</h2>
-<p>Ви можете будь-коли видалити свій обліковий запис і дані у застосунку, а також звернутися до нас за адресою <a href="mailto:Sirozhav17@gmail.com">Sirozhav17@gmail.com</a> щодо будь-яких питань про ваші дані.</p>
+<h2>11. Твої права</h2>
+<p>Ти можеш будь-коли: видалити історію розмов з Вілем (у застосунку), видалити дані спільноти з наших серверів (у налаштуваннях), видалити застосунок разом з усіма локальними даними. Щоб дізнатися, які дані про тебе в нас є, або попросити їх видалити, напиши на <a href="mailto:Sirozhavv7@gmail.com">Sirozhavv7@gmail.com</a>.</p>
 
-<h2>9. Зміни до політики</h2>
+<h2>12. Зміни до політики</h2>
 <p>Ми можемо оновлювати цю Політику з розвитком застосунку. Актуальна версія завжди доступна за цим посиланням. Дата оновлення вказана вгорі.</p>
 
-<h2>10. Контакти</h2>
-<p>З питань конфіденційності: <a href="mailto:Sirozhav17@gmail.com">Sirozhav17@gmail.com</a>.</p>
+<h2>13. Контакти</h2>
+<p>З питань конфіденційності: <a href="mailto:Sirozhavv7@gmail.com">Sirozhavv7@gmail.com</a>.</p>
 </section>
 
 <hr>
@@ -107,43 +131,62 @@
 <!-- ============ ENGLISH ============ -->
 <section id="en">
 <h1>Privacy Policy</h1>
-<p class="updated">Vilno app · Last updated: July 8, 2026 </p>
+<p class="updated">Vilno app · Last updated: July 27, 2026</p>
 
 <p>This Privacy Policy explains how the Vilno app ("we", "the app") handles user information. We respect your privacy and collect the minimum data required for the app to function.</p>
 
 <h2>1. Who we are</h2>
-<p>Vilno is a mobile app that helps people quit smoking: progress tracking, tips, and a support community. Developer: Serhii Veresiuk. Privacy contact: <a href="mailto:Sirozhav17@gmail.com">Sirozhav17@gmail.com</a>.</p>
+<p>Vilno is a mobile app that helps people quit smoking: progress tracking, tips, and a support community. Developer: Serhii Veresiuk. Privacy contact: <a href="mailto:Sirozhavv7@gmail.com">Sirozhavv7@gmail.com</a>.</p>
 
-<h2>2. What data we process</h2>
-
-<h3>2.1. Data stored only on your device</h3>
-<p>Most data never leaves your phone. Stored locally:</p>
+<h2>2. Vil: how your messages are processed</h2>
+<p>Vil is an AI companion inside the app. So that it can give a meaningful reply, your message along with a short context is sent to our secure server and from there to Anthropic PBC (USA), whose language model produces the response.</p>
+<p><strong>What is sent along with the message:</strong></p>
 <ul>
-  <li>quit date, product and price settings;</li>
-  <li>your progress, statistics, resisted cravings, money saved;</li>
-  <li>craving logs (used for personalized tips);</li>
-  <li>your goals, settings, interface language;</li>
-  <li>reminder (notification) settings.</li>
+  <li>the type of product you are quitting and your motivation;</li>
+  <li>how many days you have been free and your craving statistics for recent weeks;</li>
+  <li>your current stage of physical recovery;</li>
+  <li>your goals and the amount of money saved;</li>
+  <li>the moods of your recent check-ins and <strong>short excerpts of your notes</strong> from check-ins and the journal (up to 80 characters each);</li>
+  <li>brief summaries of previous conversations, so that Vil does not ask the same thing twice.</li>
 </ul>
-<p>We do not transmit this data to any servers and have no access to it.</p>
+<p>This context exists only so that the reply is about you rather than generic. <strong>We do not store your message or the context on our servers</strong> — they pass through in transit and are used solely to produce the reply.</p>
+<p>Anthropic processes this data as our contractor and <strong>does not use it to train its models</strong> — this is set out in the commercial terms under which we use the service. On Anthropic's side a request may be retained briefly for abuse monitoring.</p>
+<p><strong>Your conversation history with Vil is stored only on your device.</strong> We have no access to it and cannot read it. If you delete the history in the app or delete the app itself, it is gone for good, and we hold no copy of it.</p>
+<p><strong>One exception — reports.</strong> If you tap "report" on a message from Vil, that message together with the preceding one is stored on our server so that we can look into it and improve the responses. We keep such records for no longer than 90 days.</p>
 
-<h3>2.2. Community feature data</h3>
-<p>If you use the community (chat, success feed, buddy), the related data is processed via <strong>Google Firebase</strong> (Firestore, Firebase Authentication). This includes:</p>
-<ul>
-  <li>the nickname you choose;</li>
-  <li>messages you send in chat or to a buddy;</li>
-  <li>posts you publish in the success feed;</li>
-  <li>an anonymous account identifier.</li>
-</ul>
-<p>Community sign-in is <strong>anonymous</strong>: we do not ask for your name, email, or phone number. An account is created automatically and anonymously.</p>
+<h2>3. Journal, check-ins and progress</h2>
+<p>Your journal, craving logs, check-ins, quit date and statistics are stored <strong>on your device</strong>. They do not reach our servers and are not synced between devices.</p>
+<p>The exception is described above: short excerpts of your notes may be included in the context of a message to Vil — only at the moment when you address him yourself.</p>
 
-<h2>3. Legal basis and purpose</h2>
+<h2>4. Community</h2>
+<p>If you use the community, the following is stored on our servers (Google Firebase): the nickname you chose, your posts in the feed, chat messages and buddy correspondence, as well as the quit date and calculation settings visible in your public profile. Sign-up is anonymous: we do not ask for your email, phone number or real name.</p>
+<p>This data can be deleted in full in the app settings.</p>
+
+<h2>5. "Vilno Pro" subscription</h2>
+<p>Payment is taken by the app store (Google Play or App Store). <strong>We do not receive or store your bank card details.</strong></p>
+<p>To manage subscriptions we use RevenueCat, Inc. (USA). It receives a technical identifier of your account in the app, purchase information (which plan, when it was taken out, whether the subscription is active) and basic technical device data. RevenueCat receives neither your conversations with Vil, nor your journal, nor community data.</p>
+
+<h2>6. Legal basis and purpose</h2>
 <p>We process community data solely to make the communication feature work. Local data is used only to run the app on your device.</p>
 
-<h2>4. Sharing with third parties</h2>
-<p>We do not sell or share your data with third parties for advertising. Community data is processed by our infrastructure provider Google Firebase in accordance with <a href="https://firebase.google.com/support/privacy" target="_blank">Google's privacy policy</a>. The first release contains no advertising and no third-party analytics.</p>
+<h2>7. Who we share data with</h2>
+<p>We do not sell your data and do not share it for advertising. We do not use ad networks or trackers. Only the services the app cannot work without have access to data:</p>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Service</th><th>What it receives</th><th>Why</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Google Firebase (Google LLC)</td><td>community data, technical identifier</td><td>storage and the server side of the app</td></tr>
+    <tr><td>Anthropic PBC (USA)</td><td>message text and context (in transit)</td><td>producing Vil's reply</td></tr>
+    <tr><td>RevenueCat, Inc.</td><td>account identifier, subscription data</td><td>subscription management</td></tr>
+    <tr><td>Google Play / App Store</td><td>purchase data</td><td>taking payment</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Some of these services are located outside Ukraine, including in the USA. Data is transferred only to the extent needed for the app to work.</p>
 
-<h2>5. Data retention and deletion</h2>
+<h2>8. Data retention and deletion</h2>
 <p>Local data is kept until you delete the app or reset it in settings.</p>
 <p>Community data is kept until you delete your account. The app provides a <strong>"Delete account and community data"</strong> function (in settings) that removes your anonymous account and associated data (nickname, messages, posts) from the servers.</p>
 <p>Content reports may be retained separately for safety and moderation purposes.</p>
@@ -152,20 +195,20 @@
 <p>You can delete your account and all associated data at any time directly in the Vilno app: open <strong>"More" → "Delete account and community data"</strong>. This removes: your nickname, chat and feed messages, posts, reactions, and community profile. Local data (progress, settings) is removed when you uninstall the app or use "Start over".</p>
 <p>Data is deleted without an additional retention period (except content reports, which are retained for safety as required).</p>
 
-<h2>6. Moderation and user content</h2>
+<h2>9. Moderation and user content</h2>
 <p>The community contains user-generated content. We apply automated moderation and provide the ability to report content and block users. Abusive or objectionable content is prohibited by the community rules, which you accept before first entry.</p>
 
-<h2>7. Children</h2>
+<h2>10. Children</h2>
 <p>The app is intended for adults (18+), as it concerns tobacco cessation. We do not knowingly collect data from children.</p>
 
-<h2>8. Your rights</h2>
-<p>You may delete your account and data in the app at any time, and contact us at <a href="mailto:Sirozhav17@gmail.com">Sirozhav17@gmail.com</a> with any questions about your data.</p>
+<h2>11. Your rights</h2>
+<p>At any time you can: delete your conversation history with Vil (in the app), delete community data from our servers (in settings), and delete the app together with all local data. To find out what data we hold about you, or to ask for it to be deleted, write to <a href="mailto:Sirozhavv7@gmail.com">Sirozhavv7@gmail.com</a>.</p>
 
-<h2>9. Changes to this policy</h2>
+<h2>12. Changes to this policy</h2>
 <p>We may update this Policy as the app evolves. The current version is always available at this link. The update date is shown at the top.</p>
 
-<h2>10. Contact</h2>
-<p>For privacy questions: <a href="mailto:Sirozhav17@gmail.com">Sirozhav17@gmail.com</a>.</p>
+<h2>13. Contact</h2>
+<p>For privacy questions: <a href="mailto:Sirozhavv7@gmail.com">Sirozhavv7@gmail.com</a>.</p>
 </section>
 
 </body>

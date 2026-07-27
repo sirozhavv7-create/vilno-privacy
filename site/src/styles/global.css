@@ -709,6 +709,37 @@ section {
   margin: 0 auto 20px;
 }
 
+/* Таблиця в юридичних текстах */
+.table-wrap {
+  overflow-x: auto;
+  margin: 20px 0 24px;
+}
+
+.prose table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 460px;
+  font-size: 0.95rem;
+}
+
+.prose th,
+.prose td {
+  text-align: left;
+  vertical-align: top;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.prose th {
+  background: var(--sage-soft);
+  color: var(--sage);
+  font-weight: 700;
+}
+
+.prose tbody tr:last-child td {
+  border-bottom: none;
+}
+
 .placeholder-block {
   border: 2px dashed var(--line);
   border-radius: var(--radius-md);
