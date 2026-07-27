@@ -30,7 +30,8 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
                   })}
                 </time>
                 <h2>{post.data.title}</h2>
-                <p>{post.data.description}</p>
+                <p class="blog-excerpt">{post.data.description}</p>
+                <span class="blog-more">Читати далі →</span>
               </a>
             </article>
           ))}

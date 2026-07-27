@@ -19,6 +19,19 @@
     Arial, sans-serif;
 
   --maxw: 1080px;
+
+  /* Вертикальний ритм: щільніший на мобільному, просторіший на десктопі */
+  --section-pad: 40px;
+  --lead-gap: 26px;
+  --block-gap: 24px;
+}
+
+@media (min-width: 760px) {
+  :root {
+    --section-pad: 80px;
+    --lead-gap: 40px;
+    --block-gap: 32px;
+  }
 }
 
 *,
@@ -145,36 +158,45 @@ p {
 
 /* ===== Секції ===== */
 section {
-  padding: 56px 0;
-}
-
-@media (min-width: 760px) {
-  section {
-    padding: 80px 0;
-  }
+  padding: var(--section-pad) 0;
 }
 
 .section-title {
   text-align: center;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .section-lead {
   text-align: center;
   color: var(--muted);
   max-width: 620px;
-  margin: 0 auto 40px;
+  margin: 0 auto var(--lead-gap);
+}
+
+/* Якщо під заголовком немає ліда — він сам тримає відступ до контенту */
+.section-title:not(:has(+ .section-lead)) {
+  margin-bottom: var(--lead-gap);
 }
 
 /* ===== Hero ===== */
 .hero {
-  padding-top: 48px;
+  padding-top: 28px;
 }
 
 .hero .container {
   display: grid;
-  gap: 40px;
+  gap: var(--block-gap);
   align-items: center;
+}
+
+@media (min-width: 860px) {
+  .hero {
+    padding-top: 48px;
+  }
+
+  .hero .container {
+    gap: 40px;
+  }
 }
 
 @media (min-width: 860px) {
@@ -187,7 +209,7 @@ section {
   font-size: 1.12rem;
   color: var(--muted);
   max-width: 540px;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .hero-note {
@@ -277,7 +299,7 @@ section {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  padding: 28px;
+  padding: 24px;
 }
 
 .card .card-icon {
@@ -288,7 +310,7 @@ section {
   color: var(--sage);
   display: grid;
   place-items: center;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 .card p {
@@ -301,9 +323,9 @@ section {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  padding: 32px 24px;
+  padding: 28px 22px;
   display: grid;
-  gap: 32px;
+  gap: var(--block-gap);
   align-items: center;
 }
 
@@ -451,7 +473,7 @@ section {
   text-align: center;
   color: var(--muted);
   font-size: 0.85rem;
-  margin-top: 24px;
+  margin: 20px 0 0; /* нижній відступ дає padding секції */
 }
 
 .pill {
@@ -524,7 +546,7 @@ section {
 
 .faq-more {
   text-align: center;
-  margin-top: 28px;
+  margin: 24px 0 0; /* нижній відступ дає padding секції */
 }
 
 /* ===== CTA-посилання ===== */
@@ -589,7 +611,13 @@ section {
 .prose {
   max-width: 720px;
   margin: 0 auto;
-  padding: 48px 20px 80px;
+  padding: 32px 20px 56px;
+}
+
+@media (min-width: 760px) {
+  .prose {
+    padding: 48px 20px 80px;
+  }
 }
 
 .prose h1 {
@@ -658,9 +686,9 @@ section {
 .article-cta {
   background: var(--sage-soft);
   border-radius: var(--radius-lg);
-  padding: 36px 28px;
+  padding: 32px 24px;
   text-align: center;
-  margin-top: 56px;
+  margin-top: 44px;
 }
 
 .article-cta h2 {
@@ -737,17 +765,70 @@ section {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  padding: 28px;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease,
+    background 0.15s ease;
 }
 
+/* Посилання розтягнуте на всю картку — клікабельна вся площа */
 .blog-card a {
+  display: block;
+  padding: 24px;
   text-decoration: none;
   color: var(--ink);
+}
+
+.blog-card h2 {
+  font-size: 1.25rem;
+  color: var(--sage);
+  margin-bottom: 0.4em;
+}
+
+.blog-card:hover {
+  border-color: var(--sage);
+  box-shadow: 0 12px 28px -16px rgba(42, 38, 34, 0.35);
+}
+
+.blog-card:hover h2 {
+  text-decoration: underline;
+}
+
+.blog-card:active {
+  background: var(--sage-soft);
+  box-shadow: none;
+}
+
+.blog-card a:focus-visible {
+  outline: 3px solid var(--sage);
+  outline-offset: 2px;
+  border-radius: var(--radius-md);
 }
 
 .blog-card time {
   color: var(--muted);
   font-size: 0.85rem;
+}
+
+/* Опис — рівно 3 рядки, щоб картки були однакові за висотою */
+.blog-excerpt {
+  color: var(--muted);
+  margin-bottom: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blog-more {
+  display: inline-block;
+  color: var(--sage);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.blog-card:hover .blog-more {
+  text-decoration: underline;
 }
 
 .empty-state {

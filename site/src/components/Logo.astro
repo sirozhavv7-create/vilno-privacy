@@ -22,5 +22,10 @@ const { size = 32 } = Astro.props;
     height: var(--logo-size);
     border-radius: 10px;
     flex: none;
+    /* Іконка на кремовому тлі зливається з фоном сайту —
+       тонка шавлієва рамка і легка підкладка проявляють контур.
+       box-sizing: border-box (глобальний) тримає розмір тим самим. */
+    border: 1px solid color-mix(in srgb, var(--sage) 40%, transparent);
+    background: color-mix(in srgb, var(--sage) 10%, transparent);
   }
 </style>
