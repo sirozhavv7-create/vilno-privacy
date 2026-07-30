@@ -14,7 +14,7 @@ export const APPSTORE_URL = ''; // TODO: https://apps.apple.com/app/id...
 export const IOS_LIVE = false;
 
 /** Пошта підтримки (офіційна). */
-export const SUPPORT_EMAIL = 'Sirozhavv7@gmail.com';
+export const SUPPORT_EMAIL = 'vilno.support@gmail.com';
 
 /** Канонічна адреса сайту. */
 export const SITE_URL = 'https://vilno-ua.web.app';
