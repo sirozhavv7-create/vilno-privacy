@@ -5,7 +5,7 @@
 
 /** Посилання на Google Play. */
 export const PLAY_URL =
-  'https://play.google.com/store/apps/details?id=PACKAGE_TUT'; // ← заміни PACKAGE_TUT на package з app.json
+  'https://play.google.com/store/apps/details?id=org.kynuty.app'; // ← заміни PACKAGE_TUT на package з app.json
 
 /** Посилання на App Store. Заповнити, коли застосунок вийде на iOS. */
 export const APPSTORE_URL = ''; // TODO: https://apps.apple.com/app/id...
