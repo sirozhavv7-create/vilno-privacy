@@ -439,6 +439,14 @@ section {
   color: var(--muted);
 }
 
+/* Тріал прив'язаний саме до місячного плану — тому окремим рядком під ціною */
+.price-trial {
+  color: var(--sage);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin: 0 0 4px;
+}
+
 .price-alt {
   color: var(--muted);
   font-size: 0.95rem;

@@ -79,7 +79,8 @@ site/
    - `SITE_URL` — справжній `https://<project>.web.app` (після зміни виконати
      `npm run generate:assets`, щоб QR і robots.txt* вказували куди треба);
    - `APPSTORE_URL` + `IOS_LIVE = true` — коли вийде iOS;
-   - `SUPPORT_EMAIL` — зараз пошта з політики конфіденційності, за потреби замінити.
+   - `SUPPORT_EMAIL` — публічний контакт підтримки (звіряється з профілем
+     розробника в Google Play).
 2. **Скріншоти:** SCREEN_1–3 уже підставлені (`public/screens/`). Щоб додати
    нові або замінити наявні: поклади PNG у `public/screens/`, впиши шлях у
    `SCREENS` у `config.mjs` і виконай `npm run generate:assets` — скрипт стисне
